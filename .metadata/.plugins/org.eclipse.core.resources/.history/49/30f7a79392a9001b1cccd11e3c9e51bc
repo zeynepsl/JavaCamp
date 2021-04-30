@@ -1,0 +1,16 @@
+
+public class Student {
+	int id;
+	String firstName;
+	String lastName;
+	String email;
+	String password;
+	
+	public Student() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Student(int id, String firstName, String lastName, String email, String password) {
+		
+	}
+}

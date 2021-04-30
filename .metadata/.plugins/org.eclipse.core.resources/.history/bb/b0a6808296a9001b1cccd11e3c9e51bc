@@ -1,0 +1,6 @@
+
+public class EntityRepositoryBase<T> {
+	public void Add(T entity) {
+		System.out.println("eklendi");
+	}
+}
