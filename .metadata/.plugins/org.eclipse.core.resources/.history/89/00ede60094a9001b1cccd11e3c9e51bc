@@ -1,6 +1,0 @@
-
-public class CategoryManager<T> {
-	public void Add(Category category) {
-		System.out.println(category.name + " isimli kategori eklendi.");
-	}
-}
