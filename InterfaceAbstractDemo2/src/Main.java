@@ -2,11 +2,7 @@ import Adapters.MernisServiceAdapter;
 import Concrete.StarbucksCustomerManager;
 import Entities.Customer;
 
-import java.rmi.RemoteException;
 import java.util.GregorianCalendar;
-
-import tr.gov.nvi.tckimlik.WS.KPSPublicSoapProxy;
-
 
 public class Main {
 
