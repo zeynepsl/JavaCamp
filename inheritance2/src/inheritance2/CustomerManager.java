@@ -1,9 +1,12 @@
 package inheritance2;
 
 public class CustomerManager {
+	//enjekte -parametre alama
+	//bu LOgger refereans tutucu
 	public void add(Logger logger) {
 		//müþteri ekleme kodlarý
 		
+		//ne yollarsak onun logu çalýþýr
 		logger.log();
 		
 		//DatabaseLogger databaseLogger = new DatabaseLogger();
