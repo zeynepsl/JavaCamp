@@ -1,7 +1,6 @@
 package Adapters;
 
 import Abstract.CustomerCheckService;
-import Abstract.CustomerService;
 import Entities.Customer;
 import java.rmi.RemoteException;
 import java.time.ZoneId;

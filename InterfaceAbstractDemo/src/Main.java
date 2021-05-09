@@ -10,7 +10,7 @@ public class Main {
 		Customer customer = new Customer();
 		customer.setFirstName("ZEYNEP");
 		customer.setLastName("SALMAN");
-		customer.setDateOfBirth(new GregorianCalendar(2002, 10 , 10).getTime());
+		customer.setDateOfBirth(new GregorianCalendar(2002, 04 , 10).getTime());
 		customer.setNationalityId("1112222233");
 		StarbucksCustomerManager starbucksCustomerManager = new StarbucksCustomerManager(new MernisServiceAdapter());
 		starbucksCustomerManager.save(customer);
