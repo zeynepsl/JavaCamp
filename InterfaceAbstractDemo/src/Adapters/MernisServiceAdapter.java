@@ -12,7 +12,7 @@ public class MernisServiceAdapter implements CustomerCheckService{
 	@Override
 	public boolean checkIfRealPerson(Customer customer){
 		KPSPublicSoapProxy kpsPublicSoapProxy = new KPSPublicSoapProxy();    
-	    boolean result = false;
+	    boolean result=false;
 	    
 		try 
 		{
@@ -26,7 +26,7 @@ public class MernisServiceAdapter implements CustomerCheckService{
 		} 
 		catch (RemoteException e) 
 		{
-			e.printStackTrace();
+			System.out.println("mernis çalýþmýyor");
 		}
 
 		return result;

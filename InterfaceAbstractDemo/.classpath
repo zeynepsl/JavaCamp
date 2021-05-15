@@ -14,5 +14,7 @@
 	<classpathentry kind="lib" path="C:/Users/HP/.p2/pool/plugins/org.apache.commons.logging_1.2.0.v20180409-1502.jar"/>
 	<classpathentry kind="lib" path="C:/Users/HP/Downloads/mail.jar.zip"/>
 	<classpathentry kind="lib" path="C:/Users/HP/Downloads/activation.jar.zip"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Downloads/javax.mail (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Downloads/activation.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
