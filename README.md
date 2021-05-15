@@ -13,4 +13,5 @@
 ### Day 4
 - <a href="https://github.com/zeynepsl/JavaCamp/tree/master/interfaces">lecture - interfaces</a>
 - <a href="https://github.com/zeynepsl/JavaCamp/tree/master/day4Homework1">Homework 1</a>
-- <a href="https://github.com/zeynepsl/JavaCamp/tree/master/InterfaceAbstractDemo">Homework 2</a>
+- <a href="https://github.com/zeynepsl/JavaCamp/tree/master/InterfaceAbstractDemo">Homework 2 - InterfaceAbstractDemo</a>
+- <a href="https://github.com/zeynepsl/JavaCamp/tree/master/gameProject">Homework 3 - gameProject</a>
