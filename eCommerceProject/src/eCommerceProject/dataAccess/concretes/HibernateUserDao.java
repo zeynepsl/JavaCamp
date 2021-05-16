@@ -59,13 +59,25 @@ public class HibernateUserDao implements UserDao{
 		return user;
 	}
 	
+	@Override
 	public boolean emailExist(String email) {
 		for (User user1 : users) 
-			if (user1.getEmail() == email) {
+			if (user1.getEmail().equals(email)) {
 				return true;
 			}				
 		return false;	
 	}
+	
+	@Override
+	public List<String> getAllEmails(){
+		List<User> users1 = getAll();
+		List<String> emails = new ArrayList<String>();
+		for (User user : users1) {
+			emails.add(user.getEmail());
+		}
+		return emails;
+	}
+	
 	
 	
 

@@ -2,7 +2,6 @@ package eCommerceProject.business.abstracts;
 
 import java.util.List;
 
-import eCommerceProject.core.utils.Result;
 import eCommerceProject.entities.concretes.User;
 
 public interface UserService {

@@ -1,14 +1,9 @@
 package eCommerceProject.business.concretes;
 
-import java.util.List;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import eCommerceProject.business.abstracts.AuthService;
-import eCommerceProject.business.abstracts.UserService;
-import eCommerceProject.core.utils.Result;
 import eCommerceProject.dataAccess.abstracts.UserDao;
-import eCommerceProject.dataAccess.concretes.HibernateUserDao;
 import eCommerceProject.entities.concretes.User;
 
 public class AuthManager implements AuthService{
@@ -16,25 +11,29 @@ public class AuthManager implements AuthService{
 	public static String regex = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$";
 	Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
 	
-	UserService userService;
+	UserDao userDao;
 	
-	public AuthManager(UserService userService) {
-		super();
-		this.userService = userService;
+	public AuthManager(UserDao userDao) {
+		this.userDao = userDao;
 	}
 
 	@Override
-	public Result login(String email, String password) {
-		if(userService.emailExists(email)==true  && !email.isEmpty() && !password.isEmpty()) {
-			return new Result(true, "Sisteme giris basarili");
+	public void login(String email, String password) {
+		if(!email.isEmpty() && !password.isEmpty()) {
+			if(userDao.emailExist(email)) {
+				System.out.println("Sisteme giris basarili");
+				}
+			else {
+				System.out.println("sisteme giris basarisiz");
+			}
 		};
-		return new Result(false, "sisteme giris basarisiz");
+		
 	}
 
 	@Override
 	public void register(User user) {
 
-		if (userService.emailExists(user.getEmail()) == false) {
+		if (userDao.emailExist(user.getEmail()) == true) {
 			System.out.println("bu kullanici zaten mevcut");
 			return;
 		}
@@ -45,25 +44,24 @@ public class AuthManager implements AuthService{
 			return;
 		}
 
-		if (checkIfNameIsValid(user.getFirstName(), user.getLastName()) == false) {
+		if (!checkIfNameIsValid(user.getFirstName(), user.getLastName())) {
 			System.out.println("isim gecersiz");
 			return;
 		}
 
-		if (checkIfPasswordIsValid(user.getPassword()) == false) {
+		if (!checkIfPasswordIsValid(user.getPassword())) {
 			System.out.println("sifre gecersiz");
 			return;
 		}
 
-		if (checkIfEmailIsValid(user.getEmail()) == false) {
-			System.out.println("mail gecersizi");
+		if (!checkIfEmailIsValid(user.getEmail())) {
+			System.out.println("mail gecersiz");
 			return;
 		}
-		System.out.println("dogrulama e-postasi gönderildi: " + user.getEmail());
-		userService.add(user);
-		System.out.println("kullanýcý sisteme basariyla kaydedildi");
-		return;
-			
+	
+		System.out.println(user.getEmail() + "adresine dogrulama e-postasi gonderildi: ");
+		userDao.add(user);
+		System.out.println("adi: " + user.getFirstName() + " soyadý: " + user.getLastName() + " olan kullanýcý sisteme basariyla kaydedildi");
 		 
 	}
 	
@@ -77,7 +75,11 @@ public class AuthManager implements AuthService{
 	
 	public boolean checkIfEmailIsValid(String email) {
 		return pattern.matcher(email).find();
-		/*Pattern pattern=Pattern.compile(regex);
+		
+		//alternatif1: return Pattern.matches(regex, email);
+			
+		/*alternatif2: 
+		 * Pattern pattern=Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(email);
 		if(matcher.matches()) {
 			return true;
@@ -86,18 +88,6 @@ public class AuthManager implements AuthService{
 		
 	}
 	
-	
-	public boolean checkIfEmailUsedBefore(String email) {
-		List<String> emails = userService.getAllEmails();
-		
-		for (String eMail : emails) {
-			if (eMail.equals(email)) {		
-				System.out.println(" mail address used before");
-				return false;
-			}
-		}
-		return true;
-	}
 	
 	public boolean checkIfNameIsValid(String firstName, String lastName) {
 		if(firstName.length() < 2  && lastName.length() < 2) {

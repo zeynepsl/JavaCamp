@@ -5,7 +5,6 @@ import java.util.List;
 
 import eCommerceProject.business.abstracts.UserService;
 import eCommerceProject.core.utils.GoogleService;
-import eCommerceProject.core.utils.Result;
 import eCommerceProject.dataAccess.abstracts.UserDao;
 import eCommerceProject.entities.concretes.User;
 
@@ -67,9 +66,5 @@ public class UserManager implements UserService{
 	public boolean emailExists(String email) {
 		return userDao.emailExist(email);
 	}
-
-	
-
-	
 	
 }
