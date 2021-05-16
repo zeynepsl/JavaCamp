@@ -15,3 +15,6 @@
 - <a href="https://github.com/zeynepsl/JavaCamp/tree/master/day4Homework1">Homework 1</a>
 - <a href="https://github.com/zeynepsl/JavaCamp/tree/master/InterfaceAbstractDemo">Homework 2 - InterfaceAbstractDemo</a>
 - <a href="https://github.com/zeynepsl/JavaCamp/tree/master/gameProject">Homework 3 - gameProject</a>
+### Day 5
+- <a href="https://github.com/zeynepsl/JavaCamp/tree/master/nLayeredDemo">lecture - nLayeredDemo</a>
+- <a href="https://github.com/zeynepsl/JavaCamp/tree/master/eCommerceProject">Homework 1 - eCommerceProject</a>
