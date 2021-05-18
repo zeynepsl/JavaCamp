@@ -1,3 +1,4 @@
+# Icerik
 bir e-ticaret sisteminde sisteme kayıt ve sisteme giriş için gerekli gereksinim ve kabul kriterleri: (Bu sisteme ait Java backend yazmak istiyoruz.)
 
 Kullanıcılar sisteme bilgilerini girerek üye olabilmelidir.
@@ -20,3 +21,5 @@ E-posta ve parola zorunludur
 Hatalı veya başarılı durumda kullanıcı bilgilendirilmelidir.
 
 Bu isterleri katmanlı mimaride simüle ediniz.
+
+## Output
