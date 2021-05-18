@@ -19,9 +19,7 @@ public class HibernateUserDao implements UserDao{
 
 	@Override
 	public void add(User user) {
-		users.add(user);
-		System.out.println("veritabanýna eklendi : " + user.getFirstName());
-		
+		users.add(user);		
 	}
 
 	@Override
@@ -41,15 +39,26 @@ public class HibernateUserDao implements UserDao{
 		updatedUser.setLastName(user.getLastName());
 		updatedUser.setEmail(user.getEmail());
 		updatedUser.setPassword(user.getPassword());
-		System.out.println("güncellendi : " + user.getFirstName());
+		System.out.println("guncellendi : " + user.getFirstName());
 	}
 
 
 	@Override
-	public ArrayList<User> getAll() {
-		return users;
+	public void getAll() {
+		for (User user : users) {
+			System.out.println("-----------------------");
+            System.out.println("isim: "+ user.getFirstName());
+            System.out.println("soyisim: "+ user.getLastName());
+            System.out.println("e-posta: "+ user.getEmail());
+        }
 	}
 
+	//ayrýca bu sekilde users'lari donduren metot yazma sebebi
+	//"kullanici sistemde mevcut mu" diye ararken tum kullanicilari tek tek dolasmak icin (satýr 73)
+	public ArrayList<User> getAllUsers(){
+		return users;
+	}
+	
 	@Override
 	public User get(String email) {
 		User user = users.stream()
@@ -61,8 +70,8 @@ public class HibernateUserDao implements UserDao{
 	
 	@Override
 	public boolean emailExist(String email) {
-		for (User user1 : users) 
-			if (user1.getEmail().equals(email)) {
+		for (User user : getAllUsers()) 
+			if (user.getEmail() == email) {
 				return true;
 			}				
 		return false;	
@@ -70,7 +79,7 @@ public class HibernateUserDao implements UserDao{
 	
 	@Override
 	public List<String> getAllEmails(){
-		List<User> users1 = getAll();
+		List<User> users1 = getAllUsers();
 		List<String> emails = new ArrayList<String>();
 		for (User user : users1) {
 			emails.add(user.getEmail());
@@ -79,7 +88,5 @@ public class HibernateUserDao implements UserDao{
 	}
 	
 	
-	
-
 
 }

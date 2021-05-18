@@ -10,7 +10,8 @@ public interface UserDao {
 	void delete(User user);
 	void update(User user);
 	User get(String email);
-	ArrayList<User> getAll();
+	void getAll();
+	ArrayList<User> getAllUsers();
 	boolean emailExist(String email);
 	List<String> getAllEmails();
 }
