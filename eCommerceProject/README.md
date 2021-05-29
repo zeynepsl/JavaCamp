@@ -1,5 +1,5 @@
 # Icerik
-bir e-ticaret sisteminde sisteme kayıt ve sisteme giriş için gerekli gereksinim ve kabul kriterleri: (Bu sisteme ait Java backend yazmak istiyoruz.)
+Bir e-ticaret sisteminde sisteme kayıt ve sisteme giriş için gerekli gereksinim ve kabul kriterleri: (Bu sisteme ait Java backend yazmak istiyoruz.)
 
 Kullanıcılar sisteme bilgilerini girerek üye olabilmelidir.
 
@@ -23,3 +23,4 @@ Hatalı veya başarılı durumda kullanıcı bilgilendirilmelidir.
 Bu isterleri katmanlı mimaride simüle ediniz.
 
 ## Output
+<img widht="964" alt=" " src="https://github.com/zeynepsl/JavaCamp/blob/master/eCommerceProject/output.PNG">
