@@ -18,3 +18,6 @@
 ### Day 5
 - <a href="https://github.com/zeynepsl/JavaCamp/tree/master/nLayeredDemo">lecture - nLayeredDemo</a>
 - <a href="https://github.com/zeynepsl/JavaCamp/tree/master/eCommerceProject">Homework 1 - eCommerceProject</a>
+### Day 6
+- <a href="https://github.com/zeynepsl/JavaCamp/tree/master/northwind">lecture - northwind</a>
+- <a href="https://github.com/zeynepsl/HrmsProject">Homework 3 - HrmsProject</a>
